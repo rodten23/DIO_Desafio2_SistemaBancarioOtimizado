@@ -1,6 +1,6 @@
-# **Desafio 1 - Sistema Bancário** 🖥️⚙️
+# **Desafio de Projeto 2  - Sistema Bancário Otimizado** 🖥️⚙️
 
-Código de sistema bancário simples em Python para Desafio de Projeto 1 do bootcamp "Coding The Future Vivo - Python AI Backend Developer" oferecido pela Digital Innovation One (DIO) e patrocinado pela Vivo: https://www.dio.me/bootcamp/coding-future-vivo-python-ai-backend-developer
+Código de sistema bancário simples em Python, otimizado a partir do Desafio de projeto 1, para Desafio de Projeto 2 do bootcamp "Coding The Future Vivo - Python AI Backend Developer" oferecido pela Digital Innovation One (DIO) e patrocinado pela Vivo: https://www.dio.me/bootcamp/coding-future-vivo-python-ai-backend-developer
 
 ## Requisitos:
 - Python 3.10
