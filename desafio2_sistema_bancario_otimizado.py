@@ -10,6 +10,9 @@ Por favor, digite a opção desejada:
 
 [S] Sacar       -   [X] Sair do Sistema\n
 '''
+clientes = []
+
+contas = []
 
 SALDO_INICIAL = 0
 saldo = SALDO_INICIAL
@@ -21,20 +24,38 @@ LIMITE_VALOR_SAQUE = 500
 
 extrato = ''
 
-def mostrar_extrato():
+def mostrar_extrato(saldo, extrato):
     return
 
+def formatar_data_nascimento(data_nascimento):
+    data_nasc_formatada = f'{data_nascimento[0:2]}/{data_nascimento[2:4]}/{data_nascimento[4:8]}'
+    return data_nasc_formatada
+
 def cadastrar_cliente():
+    nome = input('Por favor, digite o seu nome completo: ')
+    data_nascimento = int(input('Qual sua data de nascimento? (com 8 dígitos): '))
+    data_nasc_formato_8 = formatar_data_nascimento(data_nascimento)
+    cpf = int(input('Agora digite o seu CPF: '))
+    logradouro = input('Agora vamos cadastrar seu endereço residencial.\nPor favor, digite o logradouro (rua, avenida, travessa): ')
+    numero = int(input('Digite o número da residência: '))
+    bairro = input('Agora pode inserir o seu bairro: ')
+    cidade = input('Qual sua cidade: ')
+    sigla_estado = input('Por fim, informe a sigla do seu estado: ')
+    endereço = f'{logradouro}, {numero} - {bairro} - {cidade}/{sigla_estado}'
+
+    while cpf in clientes:
+        break
+
     return
 
 def cadastrar_conta():
     return
 
-def depositar():
-    return
+def depositar(saldo, valor, extrato):
+    return saldo, extrato
 
-def sacar():
-    return
+def sacar(saldo, valor, extrato, limite, numero_saques, limites_saques):
+    return saldo, extrato
 
 def sair():
     return
