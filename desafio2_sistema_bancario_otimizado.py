@@ -21,6 +21,25 @@ LIMITE_VALOR_SAQUE = 500
 
 extrato = ''
 
+def mostrar_extrato():
+    return
+
+def cadastrar_cliente():
+    return
+
+def cadastrar_conta():
+    return
+
+def depositar():
+    return
+
+def sacar():
+    return
+
+def sair():
+    return
+
+
 while True:
 
     opcao = input(menu)
