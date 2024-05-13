@@ -24,7 +24,8 @@ LIMITE_VALOR_SAQUE = 500
 
 extrato = ''
 
-def mostrar_extrato(saldo, extrato):
+# Função extrato deve receber os argumentos por posição e nome (positional only e keyword only)
+def mostrar_extrato(saldo, extrato): # Argumento posicional: saldo e argumento nomeado: extrato
     return
 
 def formatar_data_nascimento(data_nascimento):
@@ -35,7 +36,7 @@ def cadastrar_cliente():
     nome = input('Por favor, digite o seu nome completo: ')
     data_nascimento = int(input('Qual sua data de nascimento? (com 8 dígitos): '))
     data_nasc_formato_8 = formatar_data_nascimento(data_nascimento)
-    cpf = int(input('Agora digite o seu CPF: '))
+    cpf = int(input('Agora digite o seu CPF (apenas números): '))
     logradouro = input('Agora vamos cadastrar seu endereço residencial.\nPor favor, digite o logradouro (rua, avenida, travessa): ')
     numero = int(input('Digite o número da residência: '))
     bairro = input('Agora pode inserir o seu bairro: ')
@@ -48,13 +49,18 @@ def cadastrar_cliente():
 
     return
 
+# Deve-se ter uma lista de contas, onde cada conta é composta por agência, número da conta e usuário.
+# O número das contas é sequencial, iniciando em 1.
+# O número da agência é fixo: "0001". Cada usuário pode ter mais de uma conta, cada conta pertence a somente um usuário.
 def cadastrar_conta():
     return
 
+# Função de depósito deve receber os argumentos apenas por posição (positional only)
 def depositar(saldo, valor, extrato):
     return saldo, extrato
 
-def sacar(saldo, valor, extrato, limite, numero_saques, limites_saques):
+# Função de saque deve receber argumentos apenas por nome (keyword only)
+def sacar(saldo, valor, extrato, limite, numero_saques, limites_saques): 
     return saldo, extrato
 
 def sair():
