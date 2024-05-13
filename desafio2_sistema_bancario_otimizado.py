@@ -24,8 +24,9 @@ LIMITE_VALOR_SAQUE = 500
 
 extrato = ''
 
-# Função extrato deve receber os argumentos por posição e nome (positional only e keyword only)
-def mostrar_extrato(saldo, extrato): # Argumento posicional: saldo e argumento nomeado: extrato
+def mostrar_extrato(saldo, extrato):
+    # Função extrato deve receber os argumentos por posição e nome (positional only e keyword only)
+    # Argumento posicional: saldo e argumento nomeado: extrato
     return
 
 def formatar_data_nascimento(data_nascimento):
@@ -49,18 +50,26 @@ def cadastrar_cliente():
 
     return
 
-# Deve-se ter uma lista de contas, onde cada conta é composta por agência, número da conta e usuário.
-# O número das contas é sequencial, iniciando em 1.
-# O número da agência é fixo: "0001". Cada usuário pode ter mais de uma conta, cada conta pertence a somente um usuário.
 def cadastrar_conta():
+    # Deve-se ter uma lista de contas, onde cada conta é composta por agência, número da conta e usuário.
+    # O número das contas é sequencial, iniciando em 1.
+    # O número da agência é fixo: "0001". Cada usuário pode ter mais de uma conta, cada conta pertence a somente um usuário.
     return
 
-# Função de depósito deve receber os argumentos apenas por posição (positional only)
-def depositar(saldo, valor, extrato):
+def depositar(saldo, valor_deposito, extrato):
+    # Função de depósito deve receber os argumentos apenas por posição (positional only)
+    while True:
+        if valor_deposito < 2:
+            valor_deposito = float(input('\nInfelizmente não aceitamos moedas.\nFavor, informe novamente o valor a ser depositado => '))
+        else:
+            saldo += valor_deposito
+            extrato += f'\nDepósito de R$ {valor_deposito:.2f}  (Saldo de R$ {saldo:.2f})'
+            break
+
     return saldo, extrato
 
-# Função de saque deve receber argumentos apenas por nome (keyword only)
-def sacar(saldo, valor, extrato, limite, numero_saques, limites_saques): 
+def sacar(saldo, valor, extrato, limite, numero_saques, limites_saques):
+    # Função de saque deve receber argumentos apenas por nome (keyword only)
     return saldo, extrato
 
 def sair():
@@ -74,13 +83,9 @@ while True:
     if opcao == 'd':
         print('\nFAZER DEPÓSITO (aceitamos apenas notas):')
         valor_deposito = float(input('\nPor favor, qual valor será depositado? => '))
-        while True:
-            if valor_deposito < 2:
-                valor_deposito = float(input('\nInfelizmente não aceitamos moedas.\nFavor, informe novamente o valor a ser depositado => '))
-            else:
-                saldo += valor_deposito
-                extrato += f'\nDepósito de R$ {valor_deposito:.2f}  (Saldo de R$ {saldo:.2f})'
-                break
+        deposito, nova_linha_extrato = depositar(saldo, valor_deposito, extrato)
+        saldo += deposito
+        extrato += nova_linha_extrato
 
     elif opcao == 's':
         print(f'\nEFETUAR SAQUE (disponibilizamos apenas notas)\nLimites: até {LIMITE_SAQUES} saques diários totalizando até R$ {LIMITE_VALOR_SAQUE:.2f} por saque.')
